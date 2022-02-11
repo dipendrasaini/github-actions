@@ -1,6 +1,13 @@
 name: Shell Commands 
 
-on: [push]
+on:
+  push:
+  pull_request:
+    types:
+      - "closed"
+      - "assigned"
+      - "opened"
+      - "reopened"
 
 jobs:
   run-shell-command:
@@ -18,6 +25,7 @@ jobs:
         run: |
            node -v 
            npm -v
+
   linux-shell-command:
     runs-on: ubuntu-latest
     steps: 
