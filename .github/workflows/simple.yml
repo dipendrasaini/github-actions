@@ -21,3 +21,16 @@ jobs:
         run: |
            node -v 
            npm -v
+
+
+  linux-shell-command:
+    runs-on: ubuntu-latest
+    steps: 
+      - name: multiline script 
+        id: dip
+        uses: actions/javascript-action@v1
+        with:
+         who-to-greet: Dipendra Saini
+      
+      - name: Log dipendra time
+        run: echo "${{steps.dip.outputs.time}}"
